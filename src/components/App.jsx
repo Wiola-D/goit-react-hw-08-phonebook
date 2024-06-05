@@ -2,11 +2,11 @@ import { ContactForm } from 'components/ContactForm';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../redux/API';
+import { selectError, selectIsLoading } from '../redux/contacts/selectors';
+import css from '../styles/App.module.css';
 import { ContactsList } from './ContactList';
 import { Filter } from './Filter';
 import { Loader } from './Loader';
-import { selectError, selectIsLoading } from '../redux/selectors';
-import css from '../styles/App.module.css';
 
 export const App = () => {
   const dispatch = useDispatch();
