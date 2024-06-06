@@ -1,3 +1,7 @@
-export const Home = () => {
-  return <div>Hello in your Phonebook</div>;
-};
+export default function Home() {
+  return (
+    <div>
+      <h1>welcome page</h1>
+    </div>
+  );
+}

@@ -1,11 +1,15 @@
 import { useSelector } from 'react-redux';
 import { selectfilteredContacts } from '../redux/filters/selectors';
 import css from '../styles/ContactList.module.css';
-import { Contact } from './Contact';
+import Contact from './Contact';
+import { useEffect } from 'react';
 
-export const ContactsList = () => {
+const ContactsList = () => {
   const filteredContacts = useSelector(selectfilteredContacts);
 
+  useEffect(() => {
+    console.log(filteredContacts);
+  }, []);
   return (
     <>
       {filteredContacts && filteredContacts.length > 0 ? (
@@ -22,3 +26,4 @@ export const ContactsList = () => {
     </>
   );
 };
+export default ContactsList;

@@ -3,13 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../redux/contacts/API';
 import { selectContacts } from '../redux/contacts/selectors';
 import css from '../styles/ContactForm.module.css';
+import { useEffect } from 'react';
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
+  useEffect(() => {
+    console.log(contacts);
+  }, []);
+
   const handleSubmit = event => {
     event.preventDefault();
+
     const form = event.target;
     const name = form[0].value;
     const phone = form[1].value;
@@ -43,7 +49,7 @@ export const ContactForm = () => {
         <label htmlFor="numberInput">Number</label>
         <input
           type="text"
-          name="phone"
+          name="number"
           className={css.input}
           id="numberInput"
           pattern="^\+((?:9[679]|8[035789]|6[789]|5[90]|42|3[578]|2[1-689])|9[0-58]|8[1246]|6[0-6]|5[1-8]|4[013-9]|3[0-469]|2[70]|7|1)(?:\W*\d){0,13}\d$"
@@ -64,3 +70,4 @@ export const ContactForm = () => {
   //     </form>
   //   );
 };
+export default ContactForm;

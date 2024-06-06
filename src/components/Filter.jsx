@@ -3,7 +3,7 @@ import { setFilter } from '../redux/filters/filterSlice';
 import { nanoid } from '@reduxjs/toolkit';
 import css from '../styles/Filter.module.css';
 
-export const Filter = () => {
+const Filter = () => {
   const filterInputId = nanoid();
   const dispatch = useDispatch();
 
@@ -25,3 +25,4 @@ export const Filter = () => {
     </div>
   );
 };
+export default Filter;
