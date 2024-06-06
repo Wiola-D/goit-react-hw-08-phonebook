@@ -1,4 +1,4 @@
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../redux/contacts/API';
 import { selectContacts } from '../redux/contacts/selectors';
@@ -11,7 +11,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     console.log(contacts);
-  }, []);
+  }, [contacts]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -19,7 +19,9 @@ const ContactForm = () => {
     const form = event.target;
     const name = form[0].value;
     const phone = form[1].value;
-    const newContact = { id: nanoid(), name, phone };
+    const newContact = { name, phone };
+    console.log(newContact);
+
     const nameExists = contacts.some(contact => contact.name === name);
 
     if (nameExists) {

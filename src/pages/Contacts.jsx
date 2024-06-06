@@ -1,10 +1,14 @@
 import ContactForm from '../components/ContactForm';
 import Filter from '../components/Filter';
 import ContactList from '../components/ContactList';
+import { Helmet } from 'react-helmet';
 
 const Contacts = () => {
   return (
-    <main>
+    <div>
+      <Helmet>
+        <title>Contacts</title>
+      </Helmet>
       <div>
         <h1>Phonebook</h1>
         <ContactForm />
@@ -12,7 +16,7 @@ const Contacts = () => {
         <Filter />
         <ContactList />
       </div>
-    </main>
+    </div>
   );
 };
 

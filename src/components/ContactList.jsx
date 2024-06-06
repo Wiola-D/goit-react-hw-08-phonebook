@@ -9,7 +9,7 @@ const ContactsList = () => {
 
   useEffect(() => {
     console.log(filteredContacts);
-  }, []);
+  }, [filteredContacts]);
   return (
     <>
       {filteredContacts && filteredContacts.length > 0 ? (
