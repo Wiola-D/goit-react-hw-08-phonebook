@@ -9,10 +9,6 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  useEffect(() => {
-    console.log(contacts);
-  }, [contacts]);
-
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -27,7 +23,6 @@ const ContactForm = () => {
     if (nameExists) {
       alert(name + ' is already in contacts.');
     } else {
-      dispatch(addContact(newContact));
     }
     form.reset();
   };

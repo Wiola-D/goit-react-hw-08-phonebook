@@ -7,9 +7,6 @@ import { useEffect } from 'react';
 const ContactsList = () => {
   const filteredContacts = useSelector(selectfilteredContacts);
 
-  useEffect(() => {
-    console.log(filteredContacts);
-  }, [filteredContacts]);
   return (
     <>
       {filteredContacts && filteredContacts.length > 0 ? (

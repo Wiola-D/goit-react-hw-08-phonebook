@@ -1,5 +1,5 @@
 import { useAuth } from '../../hooks/useAuth';
-import Navigation from './Navigation';
+import Navigation from '../Navigation';
 import AuthNav from './AuthNav';
 import UserMenu from './UserMenu';
 
@@ -8,11 +8,10 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Phonebook</h1>
-      <div>
+
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </div>
+
     </header>
   );
 };

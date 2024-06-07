@@ -1,7 +1,7 @@
 import ContactForm from '../components/ContactForm';
 import Filter from '../components/Filter';
 import ContactList from '../components/ContactList';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const Contacts = () => {
   return (
